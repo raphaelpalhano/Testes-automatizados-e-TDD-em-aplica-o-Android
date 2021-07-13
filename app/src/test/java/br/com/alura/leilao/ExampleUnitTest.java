@@ -2,6 +2,7 @@ package br.com.alura.leilao;
 
 import org.junit.Test;
 
+import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.*;
 
 /**
@@ -12,6 +13,12 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+        String nulo = null;
+        assertEquals(4, 2 + 2); // valores iguais
+        assertNotEquals(5, 2 + 2); // valores devem ser diferentes
+        assertTrue(2+2 == 4);
+        assertNull(nulo); // teste para verificar se é nulo
+        assertThat(2 + 2, equalTo(4)); // muda a prática (atual e expected)
+
     }
 }
